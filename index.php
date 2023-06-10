@@ -16,9 +16,13 @@ include __DIR__ . '/tpl/body_start.php';
     <div class="pd-40"></div>
     <div class="row">
         <div class="col-md-12">
-            <h1>Welkom bij dit spel!</h1>
-            <strong>hier komt het spel te staan</strong>
+            <h1>Blackjack</h1>
+            <strong>Click below to join</strong>
         </div>
+    </div>
+    <div class="row">
+        <button class="btn btn-primary" id="p1-button">Player 1 Join</button>
+        <button class="btn btn-secondary" id="p2-button">Player 2 Join</button>
     </div>
 
 <?php

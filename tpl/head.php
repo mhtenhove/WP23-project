@@ -20,7 +20,6 @@ function p_print($array){
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="scripts/main.js"></script>
-    <script src="scripts/leapyear.js"></script>
 
 </head>
 
