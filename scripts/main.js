@@ -10,8 +10,20 @@ function player_join() {
         sessionStorage.setItem('player', player2);
         window.location.href = 'game.php'
     });
+    
+    // Game function
+    $("#test-btn").click(function(event) {
+        event.preventDefault();
+        $.ajax({
+            url: 'save.php',
+            method: 'post',
+            data: { 'player': 'Player 1' },
+            success: function(response) {
+                alert(response);
+                }
+            });
+    });
 }
-
 function player_num_display() {
     $('#player-num').text(sessionStorage.getItem('player'));
 }
