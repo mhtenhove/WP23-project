@@ -5,29 +5,37 @@ function player_join() {
     });
     
     // Game function
-    $("#test-btn").click(function(event) {
-        event.preventDefault();
-        $.ajax({
-            url: '../scripts/save.php',
-            method: 'POST',
-            data: { 'player-name': sessionStorage.getItem('player-name') },
-            success: function(){
-                load_player_info();
-            },
+//     $("#test-btn").click(function(event) {
+//         $.ajax({
+//             url: '../scripts/save.php',
+//             method: 'POST',
+//             data: { 'player-name': sessionStorage.getItem('player-name') },
+//             success: function(){
+//                 load_player_info();
+//             },
+//         });
+//     });
+// }
+    // Game function v.2
+        $("#test-btn").click(function(event) {
+            $.ajax({
+                url: '../scripts/player_turn.php',
+                method: 'POST',
+                data: { 'player-name': sessionStorage.getItem('player-name') },
+            });
         });
-    });
 }
 
-function load_player_info() {
-    $.ajax({
-        url: '../scripts/load.php',
-        method: 'GET',
-        data: { 'attr': 'name' },
-        success: function(response){
-            $("#current-player-info").html(response);
-        },
-    });
-}
+// function load_player_info() {
+//     $.ajax({
+//         url: '../scripts/load.php',
+//         method: 'GET',
+//         data: { 'attr': 'name' },
+//         success: function(response){
+//             $("#current-player-info").html(response);
+//         },
+//     });
+// }
 
 function player_name_display() {
     $('#player-num').text(sessionStorage.getItem('player-name'));
