@@ -1,8 +1,7 @@
 function player_join() {
     $('#join-button').click(function(event) {
-        player1 = 'Player 1';
-        sessionStorage.setItem('player', player1);
-        window.location.href = 'game.php'
+        let playername = $('#player-name').val()
+        sessionStorage.setItem('player-name', playername);
     });
     
     // Game function
@@ -11,33 +10,33 @@ function player_join() {
         $.ajax({
             url: '../scripts/save.php',
             method: 'POST',
-            data: { 'player': sessionStorage.getItem('player') },
+            data: { 'player-name': sessionStorage.getItem('player-name') },
             success: function(){
-                loadPlayerInfo();
+                load_player_info();
             },
         });
     });
 }
 
-function loadPlayerInfo() {
+function load_player_info() {
     $.ajax({
         url: '../scripts/load.php',
         method: 'GET',
-        data: { 'attr': 'player' },
+        data: { 'attr': 'name' },
         success: function(response){
-            $("#lastPlayerInfo").html(response);
+            $("#current-player-info").html(response);
         },
     });
 }
 
-function player_num_display() {
-    $('#player-num').text(sessionStorage.getItem('player'));
+function player_name_display() {
+    $('#player-num').text(sessionStorage.getItem('player-name'));
 }
 
 $(function() {
     player_join();
-    player_num_display();
+    player_name_display();
     if (window.location.pathname == '/game.php') {
-        window.setInterval(loadPlayerInfo, 1000);
+        window.setInterval(load_player_info, 1000);
     }
 });
