@@ -43,5 +43,7 @@ function player_num_display() {
 $(function() {
     player_join();
     player_num_display();
-    window.setInterval(loadPlayerInfo, 1000);
+    if (window.location.pathname == '/game.php') {
+        window.setInterval(loadPlayerInfo, 1000);
+    }
 });
