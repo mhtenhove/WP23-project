@@ -17,13 +17,25 @@ function player_join() {
         $.ajax({
             url: 'save.php',
             method: 'POST',
-            data: { 'player': "player 1" },
-            success: function(response) {
-                alert(response);
-                }
-            });
+            data: { 'player': sessionStorage.getItem('player') },
+            success: function(){
+                loadPlayerInfo();
+            },
+        });
     });
 }
+
+function loadPlayerInfo() {
+    $.ajax({
+        url: 'load.php',
+        method: 'GET',
+        data: { 'attr': 'player' },
+        success: function(response){
+            $("#lastPlayerInfo").html(response);
+        },
+    });
+}
+
 function player_num_display() {
     $('#player-num').text(sessionStorage.getItem('player'));
 }

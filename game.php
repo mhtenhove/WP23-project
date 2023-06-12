@@ -27,8 +27,8 @@ include __DIR__ . '/tpl/body_start.php';
                 $json_file = file_get_contents("data/data.json");
                 $decoded_file = json_decode($json_file, true);
                 $player_clicked = $decoded_file['player'];
-                p_print("The last player who clicked the button is:");
-                p_print( $player_clicked)
+                p_print("<div><p>The last player who clicked the button is:</p>");
+                p_print("<p id='lastPlayerInfo'>$player_clicked</p></div>");
                 ?>
             </h1>
         </div>
