@@ -15,7 +15,7 @@ function player_join() {
     $("#test-btn").click(function(event) {
         event.preventDefault();
         $.ajax({
-            url: 'scripts/save.php',
+            url: 'save.php',
             method: 'POST',
             data: { 'player': sessionStorage.getItem('player') },
             success: function(){
@@ -27,7 +27,7 @@ function player_join() {
 
 function loadPlayerInfo() {
     $.ajax({
-        url: 'scripts/load.php',
+        url: 'load.php',
         method: 'GET',
         data: { 'attr': 'player' },
         success: function(response){
