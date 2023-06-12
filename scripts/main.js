@@ -16,8 +16,8 @@ function player_join() {
         event.preventDefault();
         $.ajax({
             url: 'save.php',
-            method: 'post',
-            data: { 'player': 'Player 1' },
+            method: 'POST',
+            data: { 'player': "player 1" },
             success: function(response) {
                 alert(response);
                 }
