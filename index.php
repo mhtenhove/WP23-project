@@ -17,13 +17,15 @@ include __DIR__ . '/tpl/body_start.php';
     <div class="row">
         <div class="col-md-12">
             <h1>Blackjack</h1>
-            <strong>Click below to join</strong>
+            <strong>Enter a username, then click below to join</strong>
         </div>
     </div>
-    <div class="row">
-        <button class="btn btn-primary" id="p1-button">Player 1 Join</button>
-        <button class="btn btn-secondary" id="p2-button">Player 2 Join</button>
-    </div>
+    <form action="scripts/player_counter.php" method="POST">
+        <div class="form-group">
+            <input type="text" class="form-control" id="player-name" name="player-name">
+            <button type="submit" name="join" class="btn btn-primary" id="join-button">Join Lobby</button>
+        </div>
+    </form>
 
 <?php
 include __DIR__ . '/tpl/body_end.php';
