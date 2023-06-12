@@ -6,12 +6,12 @@
     }
     p_print("starting save");
     p_print("opening file");
-    if(is_writable('/data/data.json')){
+    if(is_writable('data/data.json')){
         p_print("file is writable");
     }
-    $fp = fopen('/data/data.json', 'w');
+    $fp = fopen('data/data.json', 'w');
     p_print("encoding data");
-    $test = json_encode($_POST['player']);
+    $test = json_encode($_POST);
     p_print("writing data");
     if (fwrite($fp, $test) == FALSE){
         p_print("error writing");
