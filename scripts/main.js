@@ -1,22 +1,50 @@
 function player_join() {
-    $('#p1-button').click(function(event) {
-        player1 = 'Player 1';
-        sessionStorage.setItem('player', player1);
-        window.location.href = 'game.php'
+    $('#join-button').click(function(event) {
+        let playername = $('#player-name').val()
+        sessionStorage.setItem('player-name', playername);
     });
-
-    $('#p2-button').click(function(event) {
-        player2 = 'Player 2';
-        sessionStorage.setItem('player', player2);
-        window.location.href = 'game.php'
-    });
+    
+    // Game function
+//     $("#test-btn").click(function(event) {
+//         $.ajax({
+//             url: '../scripts/save.php',
+//             method: 'POST',
+//             data: { 'player-name': sessionStorage.getItem('player-name') },
+//             success: function(){
+//                 load_player_info();
+//             },
+//         });
+//     });
+// }
+    // Game function v.2
+        $("#test-btn").click(function(event) {
+            $.ajax({
+                url: '../scripts/player_turn.php',
+                method: 'POST',
+                data: { 'player-name': sessionStorage.getItem('player-name') },
+            });
+        });
 }
 
-function player_num_display() {
-    $('#player-num').text(sessionStorage.getItem('player'));
+// function load_player_info() {
+//     $.ajax({
+//         url: '../scripts/load.php',
+//         method: 'GET',
+//         data: { 'attr': 'name' },
+//         success: function(response){
+//             $("#current-player-info").html(response);
+//         },
+//     });
+// }
+
+function player_name_display() {
+    $('#player-num').text(sessionStorage.getItem('player-name'));
 }
 
 $(function() {
     player_join();
-    player_num_display();
+    player_name_display();
+    if (window.location.pathname == '/game.php') {
+        window.setInterval(load_player_info, 1000);
+    }
 });
