@@ -19,7 +19,7 @@ function player_join() {
     // Game function v.2
         $("#test-btn").click(function(event) {
             $.ajax({
-                url: '../scripts/player_turn.php',
+                url: '/WP23-project/scripts/player_turn.php',
                 method: 'POST',
                 data: { 'player-name': sessionStorage.getItem('player-name') },
             });
