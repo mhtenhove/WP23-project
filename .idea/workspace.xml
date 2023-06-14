@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="22f7f915-4925-4da4-ac48-0a41238b20e2" name="Changes" comment="Started on player turn functionality">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/13.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/14.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/15.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/16.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/17.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/18.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/19.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/20.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/21.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/22.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/23.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/24.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/25.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/26.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/27.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/28.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/29.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/30.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/31.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/32.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/33.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/34.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/35.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/36.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/37.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/38.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/39.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/40.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/41.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/42.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/43.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/44.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/45.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/46.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/47.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/48.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/49.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/50.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/51.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/52.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/images/9.jpg" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="7b81d453-a8a8-4fe7-b17b-7d91097983bb" />
+        <option name="url" value="https://github.com/mhtenhove/WP23-project" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2R0ssbtbYU1PC62PvhhMCaTPzTs" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="22f7f915-4925-4da4-ac48-0a41238b20e2" name="Changes" comment="" />
+      <created>1686398548546</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1686398548546</updated>
+      <workItem from="1686398549701" duration="2634000" />
+      <workItem from="1686426906531" duration="5435000" />
+      <workItem from="1686559504216" duration="180000" />
+      <workItem from="1686588938676" duration="7759000" />
+      <workItem from="1686745639526" duration="1174000" />
+    </task>
+    <task id="LOCAL-00001" summary="Added player_counter.php and username functionality">
+      <created>1686575234359</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1686575234359</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Further expanded upon username functionality">
+      <created>1686599739225</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1686599739226</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Started on player turn functionality">
+      <created>1686600969897</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1686600969897</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added player_counter.php and username functionality" />
+    <MESSAGE value="Further expanded upon username functionality" />
+    <MESSAGE value="Started on player turn functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started on player turn functionality" />
+  </component>
+</project>
