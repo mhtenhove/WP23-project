@@ -60,7 +60,7 @@ function player_name_display() {
 $(function() {
     player_join();
     player_name_display();
-    // if (window.location.pathname == '/game.php') {
-        // window.setInterval(load_player_info, 1000);
-    // }
+    if (window.location.pathname == '/game.php') {
+        window.setInterval(update_current_player, 1000);
+    }
 });
