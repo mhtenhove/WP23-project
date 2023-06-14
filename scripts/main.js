@@ -18,10 +18,13 @@ function player_join() {
 // }
     // Game function v.2
         $("#test-btn").click(function(event) {
+            event.preventDefault();
             $.ajax({
-                url: '/WP23-project/scripts/player_turn.php',
-                method: 'POST',
-                data: { 'player-name': sessionStorage.getItem('player-name') },
+                url: '../scripts/player_turn.php',
+                method: 'GET',
+                success: function(){
+                    //alert("dfsaffd");
+                },
             });
         });
 }
@@ -44,7 +47,7 @@ function player_name_display() {
 $(function() {
     player_join();
     player_name_display();
-    if (window.location.pathname == '/game.php') {
-        window.setInterval(load_player_info, 1000);
-    }
+    //if (window.location.pathname == '/game.php') {
+        //window.setInterval(load_player_info, 1000);
+    //}
 });
