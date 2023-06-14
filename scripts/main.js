@@ -36,8 +36,8 @@ function player_name_display() {
 
 
 function print_user(){
-    $user_name = JSON.parse(sessionStorage.getItem('player-name'));
-    alert($user_name)
+    user_name = sessionStorage.getItem('player-name');
+    alert(user_name)
 }
 
 $(function() {
