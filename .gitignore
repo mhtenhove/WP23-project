@@ -9,4 +9,5 @@
 
 # extra ignores
 data/
+.idea/
 
