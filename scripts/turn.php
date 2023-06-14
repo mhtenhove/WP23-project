@@ -8,14 +8,14 @@
     $json_file = file_get_contents("../data/decks.json");
     
     // first, deal cards
-    $player_decks = Array(
-        0 => $json_file[0],
-        1 => $json_file[1]
-    );
-    for ($x = 0; $x < 2; $x++) {
-        $i = random_int(1, 52);
-        array_push($player_decks[0], $i);
+    $player_decks = json_decode($json_file);
+    for ($p = 0; $p < count($player_decks); $p++) {
+        for ($x = 0; $x < 2; $x++) {
+            $i = random_int(1, 52);
+            array_push($player_decks[$p], $i);
+        }
     }
+    
     p_print($player_decks);
     // wait for user to select hit or stand
     
