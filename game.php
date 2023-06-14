@@ -4,9 +4,10 @@ $page_title = 'Webprogramming Final Assignment'
 ;
 $navigation = Array
 (
-    'active' => 'Index',
+    'active' => 'Game',
     'items' => Array (
-        'Index' => '/WP23-project/index.php',
+        'Register' => 'index.php',
+        'Game' => 'game.php',
     )
 );
 include __DIR__ . '/tpl/head.php';
