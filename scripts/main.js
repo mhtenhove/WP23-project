@@ -11,7 +11,7 @@ function player_join() {
                 url: 'scripts/player_turn.php',
                 method: 'GET',
                 success: function(){
-                    //alert("dfsaffd");
+                    
                 },
             });
         });
@@ -23,7 +23,7 @@ function update_current_player() {
         method: "GET",
         success: function(response){
             $("#current-player-info").html(response);
-            //alert(response);
+            
         }
 
     });
@@ -36,7 +36,7 @@ function player_name_display() {
 
 
 function print_user(){
-    $user_name = JSON.parse(sessionStorage.getItem('playername'));
+    $user_name = JSON.parse(sessionStorage.getItem('player-name'));
     alert($user_name)
 }
 
