@@ -5,16 +5,16 @@ function player_join() {
     });
 
     // Game function
-        $("#test-btn").click(function(event) {
-            event.preventDefault();
-            $.ajax({
-                url: 'scripts/player_turn.php',
-                method: 'GET',
-                success: function(){
-                    
-                },
-            });
+    $("#test-btn").click(function(event) {
+        event.preventDefault();
+        $.ajax({
+            url: 'scripts/player_turn.php',
+            method: 'GET',
+            success: function(){
+                // empty
+            },
         });
+    });
 }
 
 function update_current_player() {
@@ -23,11 +23,8 @@ function update_current_player() {
         method: "GET",
         success: function(response){
             $("#current-player-info").html(response);
-            
         }
-
     });
-
 }
 
 function player_name_display() {
@@ -44,7 +41,4 @@ $(function() {
     player_join();
     player_name_display();
     window.setInterval(update_current_player, 1000);
-
-
-
 });
