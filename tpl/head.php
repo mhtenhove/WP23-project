@@ -25,7 +25,7 @@ function p_print($array){
 
 <body>
 <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">WP23 Final Project</a>
         <ul class="navbar-nav mr-auto">
             <?php $active = $navigation['active']; ?>
