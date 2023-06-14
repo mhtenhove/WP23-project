@@ -32,6 +32,8 @@ include __DIR__ . '/tpl/body_start.php';
             </h1>
 
 
+            <img src="media/img/1.jpg"/>
+
 
         </div>
     </div>
