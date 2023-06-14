@@ -42,13 +42,14 @@ function player_join() {
 
 function update_current_player() {
     $.ajax({
-        url: "../scripts/load_current_user.php",
+        url: "scripts/load_current_user.php",
         method: "GET",
-        success: function(){
-            alert("test")
+        success: function(response){
+            $("#current-player-info").html(response);
+            alert(response);
         }
 
-    })
+    });
 
 }
 

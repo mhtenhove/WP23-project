@@ -21,6 +21,7 @@ if ($current_player == [1]) {
 }
 
 p_print($current_player);
+
 //header("Location: ../game.php");
 //exit()
 
