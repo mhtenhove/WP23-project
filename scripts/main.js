@@ -34,8 +34,17 @@ function player_name_display() {
     $('#player-num').text(sessionStorage.getItem('player-name'));
 }
 
+
+function print_user(){
+    $user_name = JSON.parse(sessionStorage.getItem('playername'));
+    alert($user_name)
+}
+
 $(function() {
     player_join();
     player_name_display();
     window.setInterval(update_current_player, 1000);
+
+
+
 });
