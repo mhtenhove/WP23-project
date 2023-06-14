@@ -40,6 +40,18 @@ function player_join() {
 //     });
 // }
 
+function update_current_player() {
+    $.ajax({
+        url: "../scripts/load_current_user.php",
+        method: "GET",
+        success: function(){
+            alert("test")
+        }
+
+    })
+
+}
+
 function player_name_display() {
     $('#player-num').text(sessionStorage.getItem('player-name'));
 }
@@ -47,7 +59,7 @@ function player_name_display() {
 $(function() {
     player_join();
     player_name_display();
-    //if (window.location.pathname == '/game.php') {
-        //window.setInterval(load_player_info, 1000);
-    //}
+    // if (window.location.pathname == '/game.php') {
+        // window.setInterval(load_player_info, 1000);
+    // }
 });
