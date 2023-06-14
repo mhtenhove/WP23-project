@@ -26,18 +26,8 @@ include __DIR__ . '/tpl/body_start.php';
         <div class="row">
             <h1>
                 <?php
-                $json_file = file_get_contents("data/data.json");
-                $decoded_file = json_decode($json_file, true);
-
-                $identifier_file = file_get_contents("data/current_player.json");
-                $identifier_decode = json_decode($identifier_file, true);
-                $identifier = $identifier_decode[0];
-
-                $current_player = $decoded_file[$identifier];
-                $current_player_name = $current_player['name'];
-
                 p_print("<div><p>The current player is:</p>");
-                p_print("<p id='current-player-info'>$current_player_name</p></div>");
+                p_print("<p id='current-player-info'></p></div>");
                 ?>
             </h1>
 
