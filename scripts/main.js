@@ -46,7 +46,7 @@ function update_current_player() {
         method: "GET",
         success: function(response){
             $("#current-player-info").html(response);
-            alert(response);
+            //alert(response);
         }
 
     });
