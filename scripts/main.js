@@ -3,8 +3,8 @@ function player_join() {
         let playername = $('#player-name').val()
         sessionStorage.setItem('player-name', playername);
     });
-    
-    // Game function v.2
+
+    // Game function
         $("#test-btn").click(function(event) {
             event.preventDefault();
             $.ajax({
@@ -16,7 +16,6 @@ function player_join() {
             });
         });
 }
-
 
 function update_current_player() {
     $.ajax({

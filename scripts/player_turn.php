@@ -4,25 +4,31 @@ function p_print($array){
     print_r($array);
     echo "</pre>";
 }
-$json_file = file_get_contents("../data/current_player.json");
-$current_player = json_decode($json_file, true);
 
+$json_file1 = file_get_contents("../data/current_player.json");
+$json_file2 = file_get_contents("../data/data.json");
+$current_player_id = json_decode($json_file1, true);
+$players = json_decode($json_file2, true);
+$player_count = sizeof($players) - 1;
 
-if ($current_player == [1]) {
-    $current_player = [2];
-    $updated_player = json_encode($current_player);
-    $cur_play_file = fopen("../data/current_player.json", "w");
-    fwrite($cur_play_file, $updated_player);
-} else {
-    $current_player = [1];
-    $updated_player = json_encode($current_player);
-    $cur_play_file = fopen("../data/current_player.json", "w");
-    fwrite($cur_play_file, $updated_player);
+foreach ($players as $key => $value) {
+    $player_id = $value['id'];
 }
 
-p_print($current_player);
+if ($current_player_id == $player_id) {
+    if ($current_player_id != $player_count) {
+        $current_player_id += 1;
+        $updated_player_id = json_encode($current_player_id);
+        $cur_play_file = fopen("../data/current_player.json", "w");
+        fwrite($cur_play_file, $updated_player_id);
+    } else {
+        $current_player = 1;
+        $updated_player = json_encode($current_player);
+        $cur_play_file = fopen("../data/current_player.json", "w");
+        fwrite($cur_play_file, $updated_player);
+    }
+}
 
-//header("Location: ../game.php");
-//exit()
+p_print($current_player_id);
 
 ?>

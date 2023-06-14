@@ -13,8 +13,7 @@ $json_file = file_get_contents("../data/data.json");
 $decoded_file = json_decode($json_file, true);
 
 $identifier_file = file_get_contents("../data/current_player.json");
-$identifier_decode = json_decode($identifier_file, true);
-$identifier = $identifier_decode[0];
+$identifier = json_decode($identifier_file, true);
 
 $current_player = $decoded_file[$identifier];
 $current_player_name = $current_player['name'];

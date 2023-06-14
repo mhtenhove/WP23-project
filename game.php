@@ -20,7 +20,7 @@ include __DIR__ . '/tpl/body_start.php';
             <strong>Press the button to get a card</strong>
             <p id="player-num"></p>
             <form action="scripts/player_turn.php">
-            <button class="btn btn-primary" id="test-btn">Click Here!</button>
+            <button name="test-btn" class="btn btn-primary" id="test-btn">Click Here!</button>
             </form>
         </div>
         <div class="row">
