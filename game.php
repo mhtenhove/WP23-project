@@ -23,11 +23,11 @@ include __DIR__ . '/tpl/body_start.php';
 
             <div id="active-player-content">
                 <form action="scripts/player_turn.php">
-                        <button name="test-btn" class="btn btn-primary" id="test-btn">Switch turn</button>
+                        <button name="test-btn" class="btn btn-primary" id="test-btn">Switch Turn!</button>
                 </form>
 
                 <strong>Press the button to get a card</strong><br/>
-                <button name="more-cards" class="btn btn-primary" id="more-cards">Give extra card!</button>
+                <button name="more-cards" class="btn btn-primary" id="more-cards">Hit Me!</button>
                 <br>
                 <strong>Press the button to start the game</strong><br/>
                 <button name="start-turn-btn" class="btn btn-primary" id="start-turn-btn">Start turn</button>
