@@ -43,6 +43,10 @@ include __DIR__ . '/tpl/body_start.php';
                     <div id="card-id">
                         <img src="media/placeholder.jpg" id="card1" width="150"/>
                         <img src="media/placeholder.jpg" id="card2" width="150"/>
+                        <img src="media/placeholder.jpg" id="card3" width="150"/>
+                        <img src="media/placeholder.jpg" id="card4" width="150"/>
+                        <img src="media/placeholder.jpg" id="card5" width="150"/>
+
                     </div>
                 </div>
             </div>
