@@ -58,7 +58,21 @@ function more_cards() {
             success: function(response) {
                 new_card = response;
                 new_card_url = "media/img/" + new_card + ".jpg"
-                $("#card3").attr("src", card1_url);
+                if ($("#card3").attr("src") != "media/placeholder.jpg") {
+                    //alert("card 3 is used already");
+                    if ($("#card4").attr("src") != "media/placeholder.jpg") {
+                        //alert("card 4 is used already");
+                        if ($("#card5").attr("src") != "media/placeholder.jpg") {
+                            //alert("cards are full");
+                        } else {
+                            $("#card5").attr("src", new_card_url);
+                        }
+                    } else {
+                        $("#card4").attr("src", new_card_url);
+                    }
+                } else {
+                    $("#card3").attr("src", new_card_url);
+                }
             }
         })
     })
