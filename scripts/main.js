@@ -26,6 +26,12 @@ function player_join() {
 
     // Game function
     $("#test-btn").click(function(event) {
+        user_name = sessionStorage.getItem('player-name');
+        if (user_name = "user_name") {
+            // username ophalen uit current_player.json
+            console.log("True")
+        }
+        console.log(user_name)
         event.preventDefault();
         $.ajax({
             url: 'scripts/player_turn.php',
