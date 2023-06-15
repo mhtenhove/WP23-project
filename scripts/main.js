@@ -133,8 +133,14 @@ function more_cards() {
 
 
 function print_user(){
-    user_name = sessionStorage.getItem('player-name');
-    alert(user_name);
+    username = sessionStorage.getItem('player-name');
+    alert(username);
+}
+
+//current way of getting player name is placeholder, should be changed when choose_winner.php functions.
+function winner_declared() {
+    username = sessionStorage.getItem('player-name')
+    $('#winning-player').textContent(username);
 }
 
 $(function() {

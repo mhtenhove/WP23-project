@@ -14,7 +14,13 @@ include __DIR__ . '/tpl/head.php';
 include __DIR__ . '/tpl/body_start.php';
 ?>
 
-
+    <div class="pd-40"></div>
+    <div class="row">
+        <div class="col-md-12">
+            <h1>And the winner is...</h1>
+            <strong id="winning-player"></strong>
+        </div>
+    </div>
 
 <?php
 include __DIR__ . '/tpl/body_end.php';
