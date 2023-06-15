@@ -26,6 +26,14 @@
     $new_json = json_encode($player_deck);
     $outfile = fopen("../data/decks.json", "w");
     fwrite($outfile, $new_json);
-    echo($player_deck[0]), (" "), ($player_deck[1])
+    echo($player_deck[0]), (" "), ($player_deck[1]);
+    // save scores
+    $score = $player_deck[0] + $player_deck[1];
+    $current_player = file_get_contents("../data/current_player.json");
+    $player_score = Array(
+        $current_player => $score,
+    );
+    $scorefile = fopen("../data/scores.json", "w");
+    fwrite($scorefile, json_encode($player_score));
     
 ?>
