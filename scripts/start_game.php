@@ -28,7 +28,18 @@
     fwrite($outfile, $new_json);
     echo($player_deck[0]), (" "), ($player_deck[1]);
     // save scores
-    $score = $player_deck[0] + $player_deck[1];
+    $score = 0;
+    $value_json = file_get_contents("../data/card_values.json");
+    $values = json_decode($value_json, true);
+    // get values
+    for ($x = 0; $x < count($values); $x++){
+        if ($values[$x]["card"] == $player_deck[0]) {
+            $score += $values[$x]["value"];
+        }
+        if ($values[$x]["card"] == $player_deck[1]) {
+            $score += $values[$x]["value"];
+        }
+    }
     $current_player = file_get_contents("../data/current_player.json");
     $player_score = Array(
         $current_player => $score,
