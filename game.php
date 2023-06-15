@@ -38,6 +38,16 @@ include __DIR__ . '/tpl/body_start.php';
             </div>
 
 
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="card-id">
+                        <img src="media/placeholder.jpg" id="card1"/>
+                        <img src="media/placeholder.jpg" id="card2"/>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
         <div class="row">
             <h1>
@@ -49,8 +59,9 @@ include __DIR__ . '/tpl/body_start.php';
 
 <!--            <img src="/media/img/1.jpg"/>-->
 
-
         </div>
+
+        
     </div>
 
 <?php
