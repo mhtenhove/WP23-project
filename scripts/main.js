@@ -15,6 +15,16 @@ function player_join() {
             },
         });
     });
+    $("start-turn-btn").click(function(event) {
+        event.preventDefault();
+        $.ajax({
+            url: 'scripts/start_game.php',
+            method: 'GET',
+            success: function(response){
+                
+            }
+        });
+    });
 }
 
 function update_current_player() {
@@ -38,9 +48,9 @@ function more_cards() {
     $('#more-cards').click(function(event) {
         $.ajax({
             url: "scripts/extra_card.php",
-            method: "GET" ,
+            method: "GET",
             success: function(response) {
-                alert("succes")
+                alert("succes");
             }
         })
     })
@@ -54,6 +64,6 @@ function print_user(){
 $(function() {
     player_join();
     player_name_display();
-    more_cards()
+    more_cards();
     window.setInterval(update_current_player, 1000);
 });
