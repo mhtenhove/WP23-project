@@ -26,5 +26,6 @@
     $new_json = json_encode($player_deck);
     $outfile = fopen("../data/decks.json", "w");
     fwrite($outfile, $new_json);
+    echo($player_deck[0]), (" "), ($player_deck[1])
     
 ?>
