@@ -41,8 +41,8 @@ include __DIR__ . '/tpl/body_start.php';
             <div class="row">
                 <div class="col-md-12">
                     <div id="card-id">
-                        <img src="media/placeholder.jpg" id="card1"/>
-                        <img src="media/placeholder.jpg" id="card2"/>
+                        <img src="media/placeholder.jpg" id="card1" width="150"/>
+                        <img src="media/placeholder.jpg" id="card2" width="150"/>
                     </div>
                 </div>
             </div>
