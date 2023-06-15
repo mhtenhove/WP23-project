@@ -15,12 +15,14 @@ function player_join() {
             },
         });
     });
-    $("start-turn-btn").click(function(event) {
+    $("#start-turn-btn").click(function(event) {
         event.preventDefault();
         $.ajax({
             url: 'scripts/start_game.php',
             method: 'GET',
             success: function(response){
+                card1 = response.split(" ")[0]
+                card2 = response.split(" ")[1]
                 
             }
         });

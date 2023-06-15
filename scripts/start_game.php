@@ -20,7 +20,7 @@
         }
     }
     
-    p_print($player_deck);
+    //p_print($player_deck);
 
     // save
     $new_json = json_encode($player_deck);
