@@ -77,7 +77,7 @@ function player_join() {
             }
         });
     });
-}co
+}
 
 function update_current_player() {
     $.ajax({
