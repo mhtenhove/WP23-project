@@ -1,11 +1,11 @@
 <?php
 if (isset($_POST['join'])) {
-    $playername = $_POST['player-name'];
-    if (empty($playername)) {
+    $player_name = $_POST['player-name'];
+    if (empty($player_name)) {
         exit;
     }
 
-    else if (!preg_match('/^[a-zA-Z0-9]+$/', $playername)){
+    else if (!preg_match('/^[a-zA-Z0-9]+$/', $player_name)){
         exit;
     }
 
@@ -16,8 +16,8 @@ if (isset($_POST['join'])) {
 
         foreach ($players as $key => $value) {
             $existing_name = $value['name'];
-            if ($playername == $existing_name) {
-                exit;
+            if ($player_name == $existing_name) {
+                $player_name .= '1';
             }
         }
 
@@ -28,13 +28,13 @@ if (isset($_POST['join'])) {
         if ($player_id == 1) {
             array_push($players, [
                 'id' => $player_id,
-                'name' => $_POST['player-name'],
+                'name' => $player_name,
                 'status' => 'active'
             ]);
         } else if ($player_id > 1 and $player_id < 5) {
             array_push($players, [
                 'id' => $player_id,
-                'name' => $_POST['player-name'],
+                'name' => $player_name,
                 'status' => 'inactive'
             ]);
         }
