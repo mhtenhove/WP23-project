@@ -23,7 +23,10 @@ function player_join() {
             success: function(response){
                 card1 = response.split(" ")[0]
                 card2 = response.split(" ")[1]
-                
+                card1_url = "media/img/" + card1 + ".jpg"
+                card2_url = "media/img/" + card2 + ".jpg"
+                $("#card-id").html(card1_url + " " +  card2)
+                $("#card1").attr("src", card1_url)
             }
         });
     });
@@ -57,6 +60,8 @@ function more_cards() {
         })
     })
 }
+
+
 
 function print_user(){
     user_name = sessionStorage.getItem('player-name');
