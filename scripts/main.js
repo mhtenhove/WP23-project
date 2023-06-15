@@ -2,25 +2,19 @@ var default_card_img = "media/placeholder.jpg";
 
 function player_join() {
     $('#join-button').click(function(event) {
-        let playername = $('#player-name').val();
 
-        $('#form-alert').text('');
-        $('#form-alert').css('display', 'none');
-
-        if (playername.length === 0) {
-            event.preventDefault();
-            $('#form-alert').text('Not all form fields are filled in!');
-            $('#form-alert').css('display', 'inline');
-        }
-
-        else if (!/^[a-zA-Z0-9]+$/.test(playername)) {
-            event.preventDefault();
-            $('#form-alert').text('That username is not valid! Try again!');
-            $('#form-alert').css('display', 'inline');
-        }
-
-        else {
+        let name_input = $('#player-name');
+        let cur_val = name_input.val();
+        let name_regex = "^[a-zA-Z0-9]+$";
+        if (cur_val.match(name_regex) && cur_val !== ''){
+            name_input.removeClass('is-invalid');
+            name_input.addClass('is-valid');
             sessionStorage.setItem('player-name', playername);
+            return true;
+        } else{
+            name_input.removeClass('is-valid');
+            name_input.addClass('is-invalid');
+            return false;
         }
     });
 
@@ -88,8 +82,6 @@ function update_current_player() {
         }
     });
 }
-
-
 
 function player_name_display() {
     $('#player-num').text(sessionStorage.getItem('player-name'));

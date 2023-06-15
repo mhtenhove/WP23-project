@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST['join'])) {
-    $playername = $_POST["player-name"];
+    $playername = $_POST['player-name'];
     if (empty($playername)) {
         exit;
     }
@@ -10,9 +10,16 @@ if (isset($_POST['join'])) {
     }
 
     else {
-        $json_file = file_get_contents("../data/data.json");
+        $json_file = file_get_contents('../data/data.json');
         $players = json_decode($json_file, true);
         $player_id = 0;
+
+        foreach ($players as $key => $value) {
+            $existing_name = $value['name'];
+            if ($playername == $existing_name) {
+                exit;
+            }
+        }
 
         foreach ($players as $key => $value) {
             $player_id = $value['id'];
@@ -35,11 +42,11 @@ if (isset($_POST['join'])) {
         $json_file = fopen('../data/data.json', 'w');
         fwrite($json_file, json_encode($players));
         fclose($json_file);
-        header("Location: ../game.php");
+        header('Location: ../game.php');
         die();
     }
 
 }
     else {
-        echo("<div><p>The maximum player count has been reached, try again later</p>");
+        echo('<div><h1>The maximum player count has been reached, try again later</h1>');
     }
