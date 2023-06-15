@@ -26,20 +26,29 @@ function player_join() {
 
     // Game function
     $("#test-btn").click(function(event) {
-        user_name = sessionStorage.getItem('player-name');
-        if (user_name = "user_name") {
-            // username ophalen uit current_player.json
-            console.log("True")
-        }
-        console.log(user_name)
         event.preventDefault();
+        current_user_name = "";
+        user_name = sessionStorage.getItem('player-name');
         $.ajax({
-            url: 'scripts/player_turn.php',
+            url: 'scripts/load_current_user.php',
             method: 'GET',
-            success: function(){
-                $(".card").attr("src", default_card_img);
-            },
+            success: function(response) {
+                current_user_name = response;
+                if (current_user_name == user_name) {
+                    // username ophalen uit current_player.json
+                    console.log("True");
+                    $.ajax({
+                        url: 'scripts/player_turn.php',
+                        method: 'GET',
+                        success: function(){
+                            $(".card").attr("src", default_card_img);
+                        },
+                    });
+                }
+                
+            }
         });
+        
     });
     $("#start-turn-btn").click(function(event) {
         event.preventDefault();
