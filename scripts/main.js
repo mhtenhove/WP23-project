@@ -1,3 +1,5 @@
+var default_card_img = "media/placeholder.jpg";
+
 function player_join() {
     $('#join-button').click(function(event) {
         let playername = $('#player-name').val();
@@ -29,7 +31,7 @@ function player_join() {
             url: 'scripts/player_turn.php',
             method: 'GET',
             success: function(){
-                // empty
+                $(".card").attr("src", default_card_img);
             },
         });
     });
@@ -76,11 +78,11 @@ function more_cards() {
             success: function(response) {
                 new_card = response;
                 new_card_url = "media/img/" + new_card + ".jpg"
-                if ($("#card3").attr("src") != "media/placeholder.jpg") {
+                if ($("#card3").attr("src") != default_card_img) {
                     //alert("card 3 is used already");
-                    if ($("#card4").attr("src") != "media/placeholder.jpg") {
+                    if ($("#card4").attr("src") != default_card_img) {
                         //alert("card 4 is used already");
-                        if ($("#card5").attr("src") != "media/placeholder.jpg") {
+                        if ($("#card5").attr("src") != default_card_img) {
                             //alert("cards are full");
                         } else {
                             $("#card5").attr("src", new_card_url);
@@ -107,5 +109,6 @@ $(function() {
     player_join();
     player_name_display();
     more_cards();
+    $("#inactive-player-content").hide();
     window.setInterval(update_current_player, 1000);
 });
