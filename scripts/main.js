@@ -1,7 +1,25 @@
 function player_join() {
     $('#join-button').click(function(event) {
         let playername = $('#player-name').val();
-        sessionStorage.setItem('player-name', playername);
+
+        $('#form-alert').text('');
+        $('#form-alert').css('display', 'none');
+
+        if (playername.length === 0) {
+            event.preventDefault();
+            $('#form-alert').text('Not all form fields are filled in!');
+            $('#form-alert').css('display', 'inline');
+        }
+
+        else if (!/^[a-zA-Z0-9]+$/.test(playername)) {
+            event.preventDefault();
+            $('#form-alert').text('That username is not valid! Try again!');
+            $('#form-alert').css('display', 'inline');
+        }
+
+        else {
+            sessionStorage.setItem('player-name', playername);
+        }
     });
 
     // Game function

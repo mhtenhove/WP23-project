@@ -21,6 +21,9 @@ include __DIR__ . '/tpl/body_start.php';
             <strong>Enter a username, then click below to join</strong>
         </div>
     </div>
+    <div class="alert alert-danger" id="form-alert" role="alert">
+        Not all form fields are filled in!
+    </div>
     <form action="scripts/player_counter.php" method="POST">
         <div class="form-group">
             <input type="text" class="form-control" id="player-name" name="player-name">

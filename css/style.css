@@ -1,3 +1,7 @@
 body {
     background-color: #66FF99;
 }
+
+#form-alert {
+    display: none;
+}
