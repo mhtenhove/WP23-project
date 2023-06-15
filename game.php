@@ -21,26 +21,20 @@ include __DIR__ . '/tpl/body_start.php';
             <strong>Press the button if you want to finish your turn</strong>
             <p id="player-num"></p>
 
-            <?php
-            $json_file = file_get_contents("data/data.json");
-            $players = json_decode($json_file, true);
+            <div id="active-player-content">
+                <form action="scripts/player_turn.php">
+                        <button name="test-btn" class="btn btn-primary" id="test-btn">Switch turn</button>
+                </form>
 
-            foreach ($players as $key => $value) {
-                $player_status = $value['status'];
-                if ($player_status == 'active') {
-                    p_print('<form action="scripts/player_turn.php">
-                    <button name="test-btn" class="btn btn-primary" id="test-btn">Switch turn</button>
-                    </form>
+                <strong>Press the button to get a card</strong><br/>
+                <button name="more-cards" class="btn btn-primary" id="more-cards">Give extra card!</button>
+            </div>
 
-                    <strong>Press the button to get a card</strong><br/>
-                    <button name="more-cards" class="btn btn-primary" id="more-cards">Give extra card!</button>');
-                }
+            <div id="inactive-player-content">
+                <p>It is not your turn yet</p>
+            </div>
 
-                else {
-                    p_print('<p>It is not your turn yet</p>');
-                }
-            }
-            ?>
+
         </div>
         <div class="row">
             <h1>

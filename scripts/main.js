@@ -27,6 +27,8 @@ function update_current_player() {
     });
 }
 
+
+
 function player_name_display() {
     $('#player-num').text(sessionStorage.getItem('player-name'));
 }
