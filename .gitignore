@@ -10,4 +10,4 @@
 # extra ignores
 data/
 .idea/
-
+*.broken*
