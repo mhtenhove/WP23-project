@@ -9,7 +9,7 @@ function player_join() {
         if (cur_val.match(name_regex) && cur_val !== ''){
             name_input.removeClass('is-invalid');
             name_input.addClass('is-valid');
-            sessionStorage.setItem('player-name', playername);
+            sessionStorage.setItem('player-name', cur_val);
             return true;
         } else{
             name_input.removeClass('is-valid');
