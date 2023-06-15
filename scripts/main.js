@@ -56,7 +56,9 @@ function more_cards() {
             url: "scripts/extra_card.php",
             method: "GET",
             success: function(response) {
-                alert("succes");
+                new_card = response;
+                new_card_url = "media/img/" + new_card + ".jpg"
+                $("#card3").attr("src", card1_url);
             }
         })
     })
