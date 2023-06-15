@@ -17,19 +17,18 @@
         array_push($player_deck, $i);
         array_splice($cards, $i, 1);
     }
-//    p_print($player_deck);
-    //p_print($player_deck);
+
 
     // save
     $score_json = file_get_contents("../data/scores.json");
     $scores = json_decode($score_json, true);
-//    p_print($scores);
+
     
     $current_player = file_get_contents("../data/current_player.json");
     $player_score = Array(
         $current_player => $scores[$current_player],
     );
-//    p_print($player_score);
+
 
 
     // save scores
