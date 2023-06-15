@@ -34,6 +34,18 @@ function player_name_display() {
 }
 
 
+function more_cards() {
+    $('#more-cards').click(function(event) {
+        $.ajax({
+            url: "scripts/extra_card.php",
+            method: "GET" ,
+            success: function(response) {
+                alert("succes")
+            }
+        })
+    })
+}
+
 function print_user(){
     user_name = sessionStorage.getItem('player-name');
     alert(user_name)
@@ -42,5 +54,6 @@ function print_user(){
 $(function() {
     player_join();
     player_name_display();
+    more_cards()
     window.setInterval(update_current_player, 1000);
 });
