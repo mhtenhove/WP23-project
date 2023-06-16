@@ -17,5 +17,9 @@
     $datafile = fopen("../data/data.json", "w");
     fwrite($datafile, '[{"id":0,"name":"Admin"}]');
     
+    // Start game
+    $statuspage = fopen("../data/game_winner.json", "w");
+    fwrite($statuspage, "none");
+    
     echo "Initialized game!";
 ?>
