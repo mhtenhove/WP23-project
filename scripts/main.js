@@ -204,6 +204,23 @@ function check_game_status() {
     });
 }
 
+function get_player_scores() {
+    $.ajax({
+        url: "scripts/get_player_scores.php",
+        method: "GET",
+        success: function(response) {
+            scores = response.split(" ");
+            scoreString = "";
+            for (let i = 1; i < scores.length; i++) {
+                scoreString += scores[i].toString();
+                if (i < scores.length - 1) {
+                    scoreString += ", ";
+                }
+            }
+            $("#cur-play-scores").html(scoreString);
+        } 
+    });
+}
 
 function print_winner() {
     //Displays the winning player.
@@ -213,7 +230,7 @@ function print_winner() {
         success: function (response) {
             $("#winning-player").html(response)
         }
-    })
+    });
 }
 
 $(function() {
@@ -226,6 +243,7 @@ $(function() {
     // $("#inactive-player-content").hide();
     if (window.location.href.endsWith("game.php")) {
         window.setInterval(update_current_player, 1000);
+        window.setInterval(get_player_scores, 1000);
         window.setInterval(check_game_status, 2000);
         player_name_display();
         hit();

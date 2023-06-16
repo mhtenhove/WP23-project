@@ -39,6 +39,14 @@ include __DIR__ . '/tpl/body_start.php';
                             <p id='current-player-info'></p></div>
                         </td>
                     </tr>
+                    <tr>
+                        <td>
+                            <p><b>The scores of the other players are:</b></p>
+                        </td>
+                        <td>
+                            <p id="cur-play-scores"></p>
+                        </td>
+                    </tr>
                 </table>
             </div>
 
