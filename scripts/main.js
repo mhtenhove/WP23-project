@@ -194,6 +194,17 @@ function check_game_status() {
     });
 }
 
+
+function print_winner() {
+    $.ajax({
+        url: "scripts/get_status",
+        method: "GET",
+        success: function (response) {
+            $("#winning-player").html(response)
+        }
+    })
+}
+
 $(function() {
     $('#player-name').keyup(function () {
         validate_name();
