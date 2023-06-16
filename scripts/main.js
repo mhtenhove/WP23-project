@@ -67,6 +67,7 @@ function update_current_player() {
                         method: 'GET',
                         success: function(response){
                             if (response.endsWith("blackjack")) {
+                                alert("Blackjack! You win the game!");
                                 win_game();
                             }
                             card1 = response.split(" ")[0];
@@ -197,7 +198,7 @@ function check_game_status() {
 
 function print_winner() {
     $.ajax({
-        url: "scripts/get_status",
+        url: "scripts/get_status.php",
         method: "GET",
         success: function (response) {
             $("#winning-player").html(response)

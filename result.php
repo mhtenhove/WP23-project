@@ -13,7 +13,9 @@ $navigation = Array
 include __DIR__ . '/tpl/head.php';
 include __DIR__ . '/tpl/body_start.php';
 ?>
-
+    <script defer>
+        print_winner();
+    </script>
 
     <div class="row">
         <div class="col-md-12">
