@@ -17,6 +17,7 @@ include __DIR__ . '/tpl/body_start.php';
     <div class="pd-40"></div>
     <div class="row">
         <div class="col-md-12">
+            <br/>
             <h1>Blackjack</h1>
             <strong>Enter a username, then click below to join</strong>
         </div>

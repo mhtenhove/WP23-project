@@ -154,6 +154,6 @@ $(function() {
     player_join();
     player_name_display();
     more_cards();
-    $("#inactive-player-content").hide();
+    // $("#inactive-player-content").hide();
     window.setInterval(update_current_player, 1000);
 });
