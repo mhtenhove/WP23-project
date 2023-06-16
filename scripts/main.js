@@ -43,7 +43,7 @@ function switch_turn() {
                         // reset kaarten
                         $(".card").attr("src", default_card_img);
                         if (response != "") {
-                            alert(response);
+                            win_game(response);
                         }
                     },
                 });
@@ -160,7 +160,7 @@ function reset() {
             success: function() {
                 alert("The game has been initialized. You can now join the lobby.")
             }
-        })
+        });
     });
 }
 
@@ -170,12 +170,12 @@ function print_user(){
     alert(username);
 }
 
-function win_game() {
+function win_game(user=sessionStorage.getItem("player-name")) {
     $.ajax({
         url: "scripts/choose_winner.php",
         method: "GET",
         data: {
-            winner: sessionStorage.getItem("player-name")
+            winner: user
         },
         success: function() {
             
@@ -211,14 +211,15 @@ $(function() {
         validate_name();
     });
     player_join();
-    player_name_display();
-    hit();
-    stand();
-    switch_turn();
     reset();
     // $("#inactive-player-content").hide();
     if (window.location.href.endsWith("game.php")) {
         window.setInterval(update_current_player, 1000);
         window.setInterval(check_game_status, 2000);
+        player_name_display();
+        hit();
+        stand();
+        switch_turn();
+        
     }
 });
