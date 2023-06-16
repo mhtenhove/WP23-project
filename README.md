@@ -46,9 +46,13 @@
   * contains the filenames of the files not needed for the project or with no need to reupload each time.
 
 ## Usage
+To run the game, go to blackjack.matthijstenhove.nl or if you use Localhost, localhost:80/WP23-project.
+You will go to an index page on which you can register your username. If you encounter any problems, you can try using the reset button above it.
+After filling in a valid username, you will be redirected to the game.php page.
+If there are two or more players in the game you can start the game.
 
 ## Webserver
-nanolento.duckdns.org:8080
-(or redirected by blackjack.matthijstenhove.nl)
+`nanolento.duckdns.org:8080`
+(or redirected by `blackjack.matthijstenhove.nl`)
 
 #

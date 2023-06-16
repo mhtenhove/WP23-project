@@ -91,9 +91,9 @@ function player_name_display() {
 }
 
 
-function more_cards() {
-    $('#more-cards').click(function(event) {
-        event.preventDefault();
+
+function hit() {
+    $('#hit-btn').click(function() {
         current_user_name = "";
         user_name = sessionStorage.getItem('player-name');
         $.ajax({
@@ -145,6 +145,12 @@ function more_cards() {
     })
 }
 
+function stand(){
+    $('#stand-btn').click(function(){
+        switch_turn();
+    });
+}
+
 function reset() {
     $("#reset").click(function() {
         $.ajax({
@@ -194,7 +200,8 @@ $(function() {
     });
     player_join();
     player_name_display();
-    more_cards();
+    hit();
+    stand();
     switch_turn();
     reset();
     // $("#inactive-player-content").hide();
