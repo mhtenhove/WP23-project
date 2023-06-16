@@ -45,7 +45,7 @@
         echo "bust";
     }
     else if ($score == 21) {
-
+        echo "blackjack";
     }
     $player_score[1] = $score;
     $scorefile = fopen("../data/scores.json", "w");
