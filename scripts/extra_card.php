@@ -41,7 +41,8 @@
         }
     }
     if ($score > 21) {
-
+        $score = 0;
+        echo 0;
     }
     else if ($score == 21) {
 

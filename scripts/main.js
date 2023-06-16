@@ -21,11 +21,14 @@ function player_join() {
         username = validate_name()
         sessionStorage.setItem('player-name', username);
     });
+}
 
-    // Switch turn button
-    $("#test-btn").click(function(event) {
-        event.preventDefault();
+function switch_turn() {
+    $("#test-btn").click(function() {
         user_name = sessionStorage.getItem('player-name');
+        $("#card3").css("display", "none")
+        $("#card4").css("display", "none")
+        $("#card5").css("display", "none")
         $.ajax({
             url: 'scripts/load_current_user.php',
             method: 'GET',
@@ -46,10 +49,8 @@ function player_join() {
                         },
                     });
                 }
-                
             }
         });
-        
     });
 }
 
@@ -105,32 +106,36 @@ function more_cards() {
                         url: "scripts/extra_card.php",
                         method: "GET",
                         success: function(response) {
-                            new_card = response;
-                            new_card_url = "media/img/" + new_card + ".jpg"
-                            if ($("#card3").attr("src") != default_card_img) {
-                                //alert("card 3 is used already");
-                                if ($("#card4").attr("src") != default_card_img) {
-                                    //alert("card 4 is used already");
-                                    if ($("#card5").attr("src") != default_card_img) {
-                                        //alert("cards are full");
+                            if (response == 0) {
+                                switch_turn();
+                            }
+                            else {
+                                new_card = response;
+                                new_card_url = "media/img/" + new_card + ".jpg"
+                                if ($("#card3").attr("src") != default_card_img) {
+                                    //alert("card 3 is used already");
+                                    if ($("#card4").attr("src") != default_card_img) {
+                                        //alert("card 4 is used already");
+                                        if ($("#card5").attr("src") != default_card_img) {
+                                            //alert("cards are full");
+                                        } else {
+                                            $("#card5").css("display", "inline")
+                                            $("#card5").attr("src", new_card_url);
+                                        }
                                     } else {
-                                        $("#card5").css("display", "inline")
-                                        $("#card5").attr("src", new_card_url);
+                                        $("#card4").css("display", "inline")
+                                        $("#card4").attr("src", new_card_url);
                                     }
                                 } else {
-                                    $("#card4").css("display", "inline")
-                                    $("#card4").attr("src", new_card_url);
+                                    $("#card3").css("display", "inline")
+                                    $("#card3").attr("src", new_card_url);
                                 }
-                            } else {
-                                $("#card3").css("display", "inline")
-                                $("#card3").attr("src", new_card_url);
                             }
                         }
                     });
                 }
             }
         });
-        
     })
 }
 
@@ -141,7 +146,6 @@ function reset() {
             method: "GET",
             success: function() {
                 alert("The game has been initialized. You can now join the lobby.")
-
             }
         })
     });
@@ -166,6 +170,7 @@ $(function() {
     player_join();
     player_name_display();
     more_cards();
+    switch_turn();
     reset();
     // $("#inactive-player-content").hide();
     window.setInterval(update_current_player, 1000);
