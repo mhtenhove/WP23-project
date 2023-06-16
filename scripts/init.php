@@ -15,7 +15,7 @@
     
     // Reset data.json
     $datafile = fopen("../data/data.json", "w");
-    fwrite($datafile, '[{"id":0,"name":"Admin","status":"inactive"}]');
+    fwrite($datafile, '[{"id":0,"name":"Admin"}]');
     
     echo "Initialized game!";
 ?>

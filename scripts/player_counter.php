@@ -27,17 +27,10 @@ if (isset($_POST['join'])) {
                     $player_id = $value['id'];
                 }
                 $player_id += 1;
-                if ($player_id == 1) {
+                if ($player_id < 5) {
                     array_push($players, [
                         'id' => $player_id,
                         'name' => $player_name,
-                        'status' => 'active'
-                    ]);
-                } else if ($player_id > 1 and $player_id < 5) {
-                    array_push($players, [
-                        'id' => $player_id,
-                        'name' => $player_name,
-                        'status' => 'inactive'
                     ]);
                 }
 
