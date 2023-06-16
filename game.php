@@ -18,9 +18,33 @@ include __DIR__ . '/tpl/body_start.php';
     <div class="row">
         <div class="col-md-12">
             <h1>Welcome to Blackjack!</h1>
-            <strong>Press the button if you want to finish your turn</strong>
-            <p id="player-num"></p>
 
+            <div id="username">
+                <table class="table">
+                    <tr>
+                        <td>
+                            <p><b>Your username:</b></p>
+                        </td>
+                        <td>
+                            <p id="player-num"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p><b>The current user is:</b></p>
+                        </td>
+                        <td>
+                            <p id='current-player-info'></p></div>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+<br/>
+
+            <div id="buttons">
+            <strong>Press the button if you want to finish your turn</strong>
             <div id="active-player-content">
                 <form action="scripts/player_turn.php">
                         <button name="test-btn" class="btn btn-primary" id="test-btn">Switch Turn!</button>
@@ -32,10 +56,15 @@ include __DIR__ . '/tpl/body_start.php';
                 <strong>Press the button to start the game</strong><br/>
                 <button name="start-turn-btn" class="btn btn-primary" id="start-turn-btn">Start turn</button>
             </div>
+            </div>
 
             <div id="inactive-player-content">
                 <p>It is not your turn yet</p>
             </div>
+
+
+            <br/>
+
 
 
             <div class="row">
@@ -53,13 +82,7 @@ include __DIR__ . '/tpl/body_start.php';
 
 
         </div>
-        <div class="row">
-            <h1>
-                <?php
-                p_print("<div><p>The current player is:</p>");
-                p_print("<p id='current-player-info'></p></div>");
-                ?>
-            </h1>
+
 
 <!--            <img src="/media/img/1.jpg"/>-->
 
