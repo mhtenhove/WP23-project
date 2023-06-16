@@ -198,6 +198,9 @@ function check_game_status() {
         method: "GET",
         success: function(response) {
             if (response !== "none") {
+                if (response.startsWith("<br />\n<b>Warning</b>")) {
+                    return;
+                }
                 window.location.href = "result.php";
             }
         }
