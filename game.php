@@ -44,15 +44,10 @@ include __DIR__ . '/tpl/body_start.php';
             <br/>
 
             <div id="buttons" class="box-blue-background">
-                <strong>Press the button if you want to finish your turn</strong>
                 <br/>
-                <button name="test-btn" class="btn btn-primary" id="test-btn">Switch Turn!</button>
+                <button name="hit-btn" class="btn btn-primary" id="hit-btn">Hit Me!</button>
                 <br/>
-                <strong>Press the button to get a card</strong><br/>
-                <button name="more-cards" class="btn btn-primary" id="more-cards">Hit Me!</button>
-                <!--<br/>
-                <strong>Press the button to start the game</strong><br/>
-                <button name="start-turn-btn" class="btn btn-primary" id="start-turn-btn">Start turn</button>-->
+                <button name="stand-btn" class="btn btn-primary" id="stand-btn">Stand!</button>
                 <br/>
             </div>
 
