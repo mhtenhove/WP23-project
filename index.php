@@ -19,10 +19,24 @@ include __DIR__ . '/tpl/body_start.php';
         <div class="col-md-12">
             <br/>
             <h1>Blackjack</h1>
+
+            <br/>
+
+            <div class="box-red-background">
+                <strong>Press this button only if:</strong><br/>
+                <ul>
+                    <li><p>You are the first person joining the session.</p></li>
+                    <li><p>There are still other people in the session, and you want to remove them.</p></li>
+                </ul>
+                <button name="more-cards" class="btn btn-primary" id="reset">Initialize game</button>
+            </div>
+
+            <br/>
+
+
             <strong>Enter a username, then click below to join</strong>
 
-
-    <form action="scripts/player_counter.php" method="POST">
+            <form action="scripts/player_counter.php" method="POST">
         <div class="form-group">
             <input type="text" class="form-control" id="player-name" name="player-name" placeholder="Enter a username...">
             <div class="valid-feedback">
@@ -35,8 +49,7 @@ include __DIR__ . '/tpl/body_start.php';
         </div>
     </form>
 
-    <strong>Press the button to reset the game</strong><br/>
-    <button name="more-cards" class="btn btn-primary" id="reset">Fix pip</button>
+
 
         </div>
     </div>

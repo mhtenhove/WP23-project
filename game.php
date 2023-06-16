@@ -19,7 +19,7 @@ include __DIR__ . '/tpl/body_start.php';
             <br/>
             <h1>Welcome to Blackjack!</h1>
 
-            <div id="username">
+            <div id="username" class="box-red-background">
                 <table class="table">
                     <tr>
                         <td>
