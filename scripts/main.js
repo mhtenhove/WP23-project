@@ -104,9 +104,8 @@ function more_cards() {
                         url: "scripts/extra_card.php",
                         method: "GET",
                         success: function(response) {
-                            alert(response);
                             if (response.startsWith("bust")) {
-                                alert("now switching turn");
+                                alert("Bust! The turn now goes to the next player!");
                                 switch_turn();
                             }
                             else {
