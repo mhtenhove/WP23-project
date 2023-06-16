@@ -1,3 +1,11 @@
 body {
     background-color: yellowgreen;
 }
+
+#card-id {
+    display: flex;
+}
+
+.card {
+    display: flex;
+}
