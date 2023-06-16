@@ -14,7 +14,7 @@ include __DIR__ . '/tpl/head.php';
 include __DIR__ . '/tpl/body_start.php';
 ?>
 
-    <div class="pd-40"></div>
+<div class="pd-40"></div>
     <div class="row">
         <div class="col-md-12">
             <h1>Welcome to Blackjack!</h1>
@@ -38,23 +38,22 @@ include __DIR__ . '/tpl/body_start.php';
                         </td>
                     </tr>
                 </table>
-
             </div>
 
-<br/>
+            <br/>
 
             <div id="buttons">
-            <strong>Press the button if you want to finish your turn</strong>
             <div id="active-player-content">
-                <form action="scripts/player_turn.php">
-                        <button name="test-btn" class="btn btn-primary" id="test-btn">Switch Turn!</button>
-                </form>
-
+                <strong>Press the button if you want to finish your turn</strong>
+                <br/>
+                <button name="test-btn" class="btn btn-primary" id="test-btn">Switch Turn!</button>
+                <br/>
                 <strong>Press the button to get a card</strong><br/>
                 <button name="more-cards" class="btn btn-primary" id="more-cards">Hit Me!</button>
-                <br>
+                <br/>
                 <strong>Press the button to start the game</strong><br/>
                 <button name="start-turn-btn" class="btn btn-primary" id="start-turn-btn">Start turn</button>
+                <br/>
             </div>
             </div>
 
@@ -84,7 +83,6 @@ include __DIR__ . '/tpl/body_start.php';
         </div>
 
 
-<!--            <img src="/media/img/1.jpg"/>-->
 
         </div>
 
