@@ -120,12 +120,15 @@ function more_cards() {
                                     if ($("#card5").attr("src") != default_card_img) {
                                         //alert("cards are full");
                                     } else {
+                                        $("#card5").css("display", "inline")
                                         $("#card5").attr("src", new_card_url);
                                     }
                                 } else {
+                                    $("#card4").css("display", "inline")
                                     $("#card4").attr("src", new_card_url);
                                 }
                             } else {
+                                $("#card3").css("display", "inline")
                                 $("#card3").attr("src", new_card_url);
                             }
                         }
@@ -137,6 +140,18 @@ function more_cards() {
     })
 }
 
+function reset() {
+    $("#reset").click(function() {
+        $.ajax({
+            url: "scripts/init.php",
+            method: "GET",
+            success: function() {
+                alert("The game has been initialized. You can now join the lobby.")
+
+            }
+        })
+    });
+}
 
 
 function print_user(){
@@ -157,6 +172,7 @@ $(function() {
     player_join();
     player_name_display();
     more_cards();
+    reset();
     // $("#inactive-player-content").hide();
     window.setInterval(update_current_player, 1000);
 });
