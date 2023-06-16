@@ -42,7 +42,7 @@ include __DIR__ . '/tpl/body_start.php';
 
             <br/>
 
-            <div id="buttons">
+            <div id="buttons" class="box-blue-background">
                 <strong>Press the button if you want to finish your turn</strong>
                 <br/>
                 <button name="test-btn" class="btn btn-primary" id="test-btn">Switch Turn!</button>
