@@ -108,23 +108,23 @@ function more_cards() {
                         url: "scripts/extra_card.php",
                         method: "GET",
                         success: function(response) {
-                        new_card = response;
-                        new_card_url = "media/img/" + new_card + ".jpg"
-                        if ($("#card3").attr("src") != default_card_img) {
-                            //alert("card 3 is used already");
-                            if ($("#card4").attr("src") != default_card_img) {
-                                //alert("card 4 is used already");
-                                if ($("#card5").attr("src") != default_card_img) {
-                                    //alert("cards are full");
+                            new_card = response;
+                            new_card_url = "media/img/" + new_card + ".jpg"
+                            if ($("#card3").attr("src") != default_card_img) {
+                                //alert("card 3 is used already");
+                                if ($("#card4").attr("src") != default_card_img) {
+                                    //alert("card 4 is used already");
+                                    if ($("#card5").attr("src") != default_card_img) {
+                                        //alert("cards are full");
+                                    } else {
+                                        $("#card5").attr("src", new_card_url);
+                                    }
                                 } else {
-                                    $("#card5").attr("src", new_card_url);
+                                    $("#card4").attr("src", new_card_url);
                                 }
                             } else {
-                                $("#card4").attr("src", new_card_url);
+                                $("#card3").attr("src", new_card_url);
                             }
-                        } else {
-                            $("#card3").attr("src", new_card_url);
-                        }
                         }
                     });
                 }
