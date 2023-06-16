@@ -2,6 +2,7 @@ const default_card_img = "media/placeholder.jpg";
 var current_player = "";
 
 function validate_name() {
+    //Validates the input given by the user in the #player-name field on the client-side.
     let name_input = $('#player-name');
     let cur_val = name_input.val();
     let name_regex = "^[a-zA-Z0-9]+$";
@@ -17,6 +18,7 @@ function validate_name() {
 }
 
 function player_join() {
+    //Runs the validate_name function. If it returns true, it adds the username to sessionStorage.
     $('#join-button').click(function(event) {
         username = validate_name()
         sessionStorage.setItem('player-name', username);
@@ -24,6 +26,7 @@ function player_join() {
 }
 
 function switch_turn() {
+    //Ends the turn of the current player and moves it to the next one.
     user_name = sessionStorage.getItem('player-name');
     $("#card3").css("display", "none")
     $("#card4").css("display", "none")
@@ -53,6 +56,7 @@ function switch_turn() {
 }
 
 function update_current_player() {
+    //Initializes the turn of a new player.
     $.ajax({
         url: "scripts/load_current_user.php",
         method: "GET",
@@ -88,12 +92,14 @@ function update_current_player() {
 }
 
 function player_name_display() {
-    $('#player-num').text(sessionStorage.getItem('player-name'));
+    //Displays the player's own name within the appropriate field.
+    $('#player-name').text(sessionStorage.getItem('player-name'));
 }
 
 
 
 function hit() {
+    //Allows the player to take another card up to three times.
     $('#hit-btn').click(function() {
         current_user_name = "";
         user_name = sessionStorage.getItem('player-name');
@@ -147,12 +153,14 @@ function hit() {
 }
 
 function stand(){
+    //Allows the player to end their turn by calling the switch_turn function.
     $('#stand-btn').click(function(){
         switch_turn();
     });
 }
 
 function reset() {
+    //Resets the files created during gameplay
     $("#reset").click(function() {
         $.ajax({
             url: "scripts/init.php",
@@ -164,13 +172,13 @@ function reset() {
     });
 }
 
-
 function print_user(){
     username = sessionStorage.getItem('player-name');
     alert(username);
 }
 
 function win_game(user=sessionStorage.getItem("player-name")) {
+    //Declares the winner of the game.
     $.ajax({
         url: "scripts/choose_winner.php",
         method: "GET",
@@ -184,6 +192,7 @@ function win_game(user=sessionStorage.getItem("player-name")) {
 }
 
 function check_game_status() {
+    //Checks whether the game is over or not.
     $.ajax({
         url: "scripts/get_status.php",
         method: "GET",
@@ -197,6 +206,7 @@ function check_game_status() {
 
 
 function print_winner() {
+    //Displays the winning player.
     $.ajax({
         url: "scripts/get_status.php",
         method: "GET",
@@ -207,6 +217,7 @@ function print_winner() {
 }
 
 $(function() {
+    //Runs all other functions
     $('#player-name').keyup(function () {
         validate_name();
     });
