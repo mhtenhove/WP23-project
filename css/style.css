@@ -30,7 +30,7 @@ button {
     padding: 10px;
 }
 
-#buttons {
+.box-blue-background {
     background-color: midnightblue;
     border-radius: 10px;
     padding: 10px;
@@ -47,4 +47,10 @@ button {
 
 table {
     color: lightgrey !important;
+}
+
+#player-name {
+    width: 322px;
+    margin-left: auto;
+    margin-right: auto;
 }

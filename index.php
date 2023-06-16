@@ -34,7 +34,8 @@ include __DIR__ . '/tpl/body_start.php';
             <br/>
 
 
-            <strong>Enter a username, then click below to join</strong>
+            <div class="box-blue-background">
+            <strong>Enter a username, then click below to join:</strong>
 
             <form action="scripts/player_counter.php" method="POST">
         <div class="form-group">
@@ -45,11 +46,12 @@ include __DIR__ . '/tpl/body_start.php';
             <div class="invalid-feedback">
                 Your name may only contain letters and numbers!
             </div>
+            <br/>
             <button type="submit" name="join" class="btn btn-primary" id="join-button">Join Lobby</button>
         </div>
     </form>
 
-
+            </div>
 
         </div>
     </div>
