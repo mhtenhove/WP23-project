@@ -42,7 +42,7 @@
     }
     if ($score > 21) {
         $score = 0;
-        echo 0;
+        echo "bust";
     }
     else if ($score == 21) {
 
