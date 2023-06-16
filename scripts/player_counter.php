@@ -1,12 +1,13 @@
 <?php
+
 if (isset($_POST['join'])) {
     $player_name = $_POST['player-name'];
     if (empty($player_name)) {
-        exit;
+        header('Location: ../index.php');
     }
 
     else if (!preg_match('/^[a-zA-Z0-9]+$/', $player_name)){
-        exit;
+        header('Location: ../index.php');
     }
 
     else {
