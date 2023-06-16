@@ -8,38 +8,25 @@ function p_print($array){
 $json_file1 = file_get_contents("../data/current_player.json");
 $json_file2 = file_get_contents("../data/data.json");
 
+$current_player_id = json_decode($json_file1, true);
+
 // load current player scores
 $score_json = file_get_contents("../data/scores.json");
 $scores = json_decode($score_json, true);
 
 // check if round scores exist and otherwise initialize
-$round_scores_exists = true;
-$round_score_json = file_get_contents("../data/round_scores.json");
-if ($round_score_json == false) {
-    $round_scores_exists = false;
+$roundscorefile = file_get_contents("../data/round_scores.json");
+$roundscores = json_decode($roundscorefile);
+p_print($scores);
+if ($current_player_id == $scores[0]) {
+    array_push($roundscores, [$current_player_id, $scores[1]]);
 }
-if ($round_scores_exists) {
-    $round_scores = json_decode($round_score_json);
-} else {
-    $round_scores = Array();
-}
+p_print($roundscores);
+// we assume $round_scores is an array scores, one for each player, so first element is player 1 etc.
 
-// we assume $round_scores is an array of player id => score.
+$roundscorefile2 = fopen("../data/round_scores.json", "w");
+fwrite($roundscorefile2, json_encode($roundscores));
 
-$current_player_id = json_decode($json_file1, true);
-
-// if scores for current player exists in $round_scores, replace the score
-// else, add the score
-if (isset($round_scores[$current_player_id])) {
-    $round_scores[$current_player_id] = $scores[$current_player_id];
-} else {
-    array_push($round_scores, $scores[$current_player_id]);
-}
-
-// write the new round scores.
-$round_score_newjson = fopen("../data/round_scores.json", "w");
-$round_scores_json = json_encode($round_scores);
-fwrite($round_score_newjson, $round_scores_json);
 
 $players = json_decode($json_file2, true);
 $player_count = count($players) - 1;
