@@ -3,11 +3,12 @@ body {
     color: lightgrey;
 }
 
-h1 {
+h1, h2 {
     text-align: center;
 }
 #card-id {
     display: flex;
+    margin-bottom: 20px;
 }
 
 .card {

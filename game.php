@@ -55,6 +55,8 @@ include __DIR__ . '/tpl/body_start.php';
                 <br/>
             </div>
 
+            <div><h2>Your hand:</h2></div>
+
             <br/>
 
             <div class="row">
