@@ -90,8 +90,7 @@ function player_name_display() {
 
 
 function hit() {
-    $('#hit-btn').click(function(event) {
-        event.preventDefault();
+    $('#hit-btn').click(function() {
         current_user_name = "";
         user_name = sessionStorage.getItem('player-name');
         $.ajax({
@@ -144,7 +143,9 @@ function hit() {
 }
 
 function stand(){
-    $('#stand-btn')
+    $('#stand-btn').click(function(){
+        switch_turn();
+    });
 }
 
 function reset() {
@@ -181,6 +182,7 @@ $(function() {
     player_join();
     player_name_display();
     hit();
+    stand();
     switch_turn();
     reset();
     // $("#inactive-player-content").hide();
