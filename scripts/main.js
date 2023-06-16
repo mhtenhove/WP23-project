@@ -6,7 +6,7 @@ function validate_name() {
     let name_input = $('#player-name');
     let cur_val = name_input.val();
     let name_regex = "^[a-zA-Z0-9]+$";
-    if (cur_val.match(name_regex) && cur_val !== '' && cur_val != "none"){
+    if (cur_val.match(name_regex) && cur_val !== '' && cur_val !== "none"){
         name_input.removeClass('is-invalid');
         name_input.addClass('is-valid');
         return cur_val;
@@ -19,7 +19,7 @@ function validate_name() {
 
 function player_join() {
     //Runs the validate_name function. If it returns true, it adds the username to sessionStorage.
-    $('#join-button').click(function(event) {
+    $('#join-button').click(function() {
         username = validate_name()
         sessionStorage.setItem('player-name', username);
     });
@@ -37,7 +37,7 @@ function switch_turn() {
         success: function(response) {
             // response = username van speler die aan beurt is
             // user_name = opgeslagen naam in browser
-            if (response == user_name) {
+            if (response === user_name) {
                 // username ophalen uit current_player.json
                 $.ajax({
                     url: 'scripts/player_turn.php',
@@ -45,7 +45,7 @@ function switch_turn() {
                     success: function(response){
                         // reset kaarten
                         $(".card").attr("src", default_card_img);
-                        if (response != "") {
+                        if (response !== "") {
                             win_game(response);
                         }
                     },
@@ -62,8 +62,8 @@ function update_current_player() {
         method: "GET",
         success: function(response){
             $("#current-player-info").html(response);
-            if (response != current_player) {
-                if (response == sessionStorage.getItem("player-name")) {
+            if (response !== current_player) {
+                if (response === sessionStorage.getItem("player-name")) {
                     // now its your player turn
                     // so automatically run start_game
                     $.ajax({
@@ -108,7 +108,7 @@ function hit() {
             method: 'GET',
             success: function(response) {
                 current_user_name = response;
-                if (current_user_name == user_name) {
+                if (current_user_name === user_name) {
                     // username ophalen uit current_player.json
                     $.ajax({
                         url: "scripts/extra_card.php",
@@ -125,11 +125,11 @@ function hit() {
                             else {
                                 new_card = response;
                                 new_card_url = "media/img/" + new_card + ".jpg"
-                                if ($("#card3").attr("src") != default_card_img) {
+                                if ($("#card3").attr("src") !== default_card_img) {
                                     //alert("card 3 is used already");
-                                    if ($("#card4").attr("src") != default_card_img) {
+                                    if ($("#card4").attr("src") !== default_card_img) {
                                         //alert("card 4 is used already");
-                                        if ($("#card5").attr("src") != default_card_img) {
+                                        if ($("#card5").attr("src") !== default_card_img) {
                                             //alert("cards are full");
                                         } else {
                                             $("#card5").css("display", "inline");
@@ -197,7 +197,7 @@ function check_game_status() {
         url: "scripts/get_status.php",
         method: "GET",
         success: function(response) {
-            if (response != "none") {
+            if (response !== "none") {
                 window.location.href = "result.php";
             }
         }

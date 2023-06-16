@@ -1,7 +1,7 @@
 <?php
 
-$json_file = file_get_contents("../data/current_player.json");
-$data = json_decode($json_file, true);
+$player_file = file_get_contents("../data/current_player.json");
+$data = json_decode($player_file, true);
 
 $json_file = file_get_contents("../data/data.json");
 $decoded_file = json_decode($json_file, true);

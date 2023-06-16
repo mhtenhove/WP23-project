@@ -34,10 +34,6 @@ if ($current_player_id < $player_count) {
     $cur_play_file = fopen("../data/current_player.json", "w");
     fwrite($cur_play_file, $updated_player_id);
 } else {
-    $current_player = 1;
-    $updated_player = json_encode($current_player);
-    $cur_play_file = fopen("../data/current_player.json", "w");
-    fwrite($cur_play_file, $updated_player);
     $best_player = 0;
     for ($x = 0; $x < count($roundscores); $x++) {
         $best_player_score = 0;
