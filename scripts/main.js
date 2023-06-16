@@ -36,9 +36,12 @@ function player_join() {
                     $.ajax({
                         url: 'scripts/player_turn.php',
                         method: 'GET',
-                        success: function(){
+                        success: function(response){
                             // reset kaarten
                             $(".card").attr("src", default_card_img);
+                            if (response != "") {
+                                alert(response);
+                            }
                         },
                     });
                 }
