@@ -21,7 +21,7 @@ include __DIR__ . '/tpl/body_start.php';
         <div class="col-md-12">
             <br/>
             <h1>And the winner is...</h1>
-            <strong id="winning-player"></strong>
+            <p id="winning-player"></p>
         </div>
     </div>
 
