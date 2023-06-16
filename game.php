@@ -1,7 +1,6 @@
 <?php
 /* Header */
-$page_title = 'Webprogramming Final Assignment'
-;
+$page_title = 'Webprogramming Final Project';
 $navigation = Array
 (
     'active' => 'Game',
