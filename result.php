@@ -8,7 +8,6 @@ $navigation = Array
     'items' => Array (
         'Register' => 'index.php',
         'Rules' => 'rules.php',
-        'Game' => 'game.php',
     )
 );
 include __DIR__ . '/tpl/head.php';
