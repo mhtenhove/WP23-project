@@ -33,9 +33,7 @@ $current_player_id = json_decode($json_file1, true);
 if (isset($round_scores[$current_player_id])) {
     $round_scores[$current_player_id] = $scores[$current_player_id];
 } else {
-    array_push($round_scores, Array(
-        $current_player_id => $scores[$current_player_id]
-    ));
+    array_push($round_scores, $scores[$current_player_id]);
 }
 
 // write the new round scores.
