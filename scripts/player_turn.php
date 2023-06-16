@@ -9,6 +9,7 @@ $json_file1 = file_get_contents("../data/current_player.json");
 $json_file2 = file_get_contents("../data/data.json");
 
 $current_player_id = json_decode($json_file1, true);
+$players = json_decode($json_file2, true);
 
 // load current player scores
 $score_json = file_get_contents("../data/scores.json");
@@ -43,6 +44,8 @@ if ($current_player_id < $player_count) {
         }
     }
     if ($best_player != 0) {
+        $best_player = $players[$best_player];
+        $best_player = $best_player['name'];
         echo $best_player;
     }
 }
