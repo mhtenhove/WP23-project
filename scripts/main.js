@@ -1,21 +1,23 @@
-var default_card_img = "media/placeholder.jpg";
+const default_card_img = "media/placeholder.jpg";
+
+function validate_name() {
+    let name_input = $('#player-name');
+    let cur_val = name_input.val();
+    let name_regex = "^[a-zA-Z0-9]+$";
+    if (cur_val.match(name_regex) && cur_val !== ''){
+        name_input.removeClass('is-invalid');
+        name_input.addClass('is-valid');
+        return true;
+    } else{
+        name_input.removeClass('is-valid');
+        name_input.addClass('is-invalid');
+        return false;
+    }
+}
 
 function player_join() {
     $('#join-button').click(function(event) {
-
-        let name_input = $('#player-name');
-        let cur_val = name_input.val();
-        let name_regex = "^[a-zA-Z0-9]+$";
-        if (cur_val.match(name_regex) && cur_val !== ''){
-            name_input.removeClass('is-invalid');
-            name_input.addClass('is-valid');
-            sessionStorage.setItem('player-name', cur_val);
-            return true;
-        } else{
-            name_input.removeClass('is-valid');
-            name_input.addClass('is-invalid');
-            return false;
-        }
+        sessionStorage.setItem('player-name', cur_val);
     });
 
     // Switch turn button
@@ -145,6 +147,9 @@ function winner_declared() {
 }
 
 $(function() {
+    $('#player-name').keyup(function () {
+        validate_name();
+    });
     player_join();
     player_name_display();
     more_cards();
