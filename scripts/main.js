@@ -50,34 +50,6 @@ function player_join() {
         });
         
     });
-    $("#start-turn-btn").click(function(event) {
-        event.preventDefault();
-        current_user_name = "";
-        user_name = sessionStorage.getItem('player-name');
-        $.ajax({
-            url: 'scripts/load_current_user.php',
-            method: 'GET',
-            success: function(response) {
-                current_user_name = response;
-                if (current_user_name == user_name) {
-                    // username ophalen uit current_player.json
-                    $.ajax({
-                        url: 'scripts/start_game.php',
-                        method: 'GET',
-                        success: function(response){
-                            card1 = response.split(" ")[0];
-                            card2 = response.split(" ")[1];
-                            card1_url = "media/img/" + card1 + ".jpg"
-                            card2_url = "media/img/" + card2 + ".jpg"
-                            //$("#card-id").html(card1_url + " " +  card2)
-                            $("#card1").attr("src", card1_url);
-                            $("#card2").attr("src", card2_url);
-                        }
-                    });
-                }
-            }
-        });
-    });
 }
 
 function update_current_player() {
