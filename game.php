@@ -6,6 +6,7 @@ $navigation = Array
     'active' => 'Game',
     'items' => Array (
         'Register' => 'index.php',
+        'Rules' => 'rules.php',
         'Game' => 'game.php',
     )
 );
