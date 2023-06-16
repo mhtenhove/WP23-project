@@ -26,8 +26,8 @@ include __DIR__ . '/tpl/body_start.php';
             <div class="box-red-background">
                 <strong>Press this button only if:</strong><br/>
                 <ul>
-                    <li><p>You are the first person joining the session.</p></li>
-                    <li><p>There are still other people in the session, and you want to remove them.</p></li>
+                    <li>You are the first person joining the session</li>
+                    <li>There are still other people in the session, and you want to remove them</li>
                 </ul>
                 <button name="more-cards" class="btn btn-primary" id="reset">Initialize game</button>
             </div>

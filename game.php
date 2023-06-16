@@ -28,7 +28,7 @@ include __DIR__ . '/tpl/body_start.php';
                             <p><b>Your username:</b></p>
                         </td>
                         <td>
-                            <p id="player-num"></p>
+                            <p id="player-name"></p>
                         </td>
                     </tr>
                     <tr>
