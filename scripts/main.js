@@ -18,22 +18,23 @@ function player_join() {
         }
     });
 
-    // Game function
+    // Switch turn button
     $("#test-btn").click(function(event) {
         event.preventDefault();
-        current_user_name = "";
         user_name = sessionStorage.getItem('player-name');
         $.ajax({
             url: 'scripts/load_current_user.php',
             method: 'GET',
             success: function(response) {
-                current_user_name = response;
-                if (current_user_name == user_name) {
+                // response = username van speler die aan beurt is
+                // user_name = opgeslagen naam in browser
+                if (response == user_name) {
                     // username ophalen uit current_player.json
                     $.ajax({
                         url: 'scripts/player_turn.php',
                         method: 'GET',
                         success: function(){
+                            // reset kaarten
                             $(".card").attr("src", default_card_img);
                         },
                     });
