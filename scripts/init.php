@@ -5,6 +5,10 @@
     $scorefile = fopen("../data/scores.json", "w");
     fwrite($scorefile, "");
     
+    // Delete round_scores.json
+    $roundscorefile = fopen("../data/round_scores.json", "w");
+    fwrite($roundscorefile, "");
+    
     // Reset current_player.json
     $cur_play_file = fopen("../data/current_player.json", "w");
     fwrite($cur_play_file, "1");
