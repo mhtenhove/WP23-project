@@ -40,6 +40,12 @@
             $score += $values[$x]["value"];
         }
     }
+    if ($score > 21) {
+
+    }
+    else if ($score == 21) {
+
+    }
     $player_score[1] = $score;
     $scorefile = fopen("../data/scores.json", "w");
     fwrite($scorefile, json_encode($player_score));
