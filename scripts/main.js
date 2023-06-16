@@ -108,6 +108,10 @@ function more_cards() {
                                 alert("Bust! The turn now goes to the next player!");
                                 switch_turn();
                             }
+                            else if (response.startsWith("blackjack")){
+                                alert("Blackjack! You win the game!")
+                                game_end();
+                            }
                             else {
                                 new_card = response;
                                 new_card_url = "media/img/" + new_card + ".jpg"
@@ -156,10 +160,13 @@ function print_user(){
     alert(username);
 }
 
-//current way of getting player name is placeholder, should be changed when choose_winner.php functions.
-function winner_declared() {
-    username = sessionStorage.getItem('player-name')
-    $('#winning-player').textContent(username);
+function game_end() {
+    $.ajax({
+        url: "scripts/choose_winner.php",
+        method: "GET",
+        success: function() {
+        }
+    })
 }
 
 $(function() {
