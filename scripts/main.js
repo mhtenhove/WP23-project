@@ -119,15 +119,15 @@ function more_cards() {
                                         if ($("#card5").attr("src") != default_card_img) {
                                             //alert("cards are full");
                                         } else {
-                                            $("#card5").css("display", "inline")
+                                            $("#card5").css("display", "inline");
                                             $("#card5").attr("src", new_card_url);
                                         }
                                     } else {
-                                        $("#card4").css("display", "inline")
+                                        $("#card4").css("display", "inline");
                                         $("#card4").attr("src", new_card_url);
                                     }
                                 } else {
-                                    $("#card3").css("display", "inline")
+                                    $("#card3").css("display", "inline");
                                     $("#card3").attr("src", new_card_url);
                                 }
                             }
