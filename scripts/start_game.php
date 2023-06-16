@@ -40,6 +40,10 @@
             $score += $values[$x]["value"];
         }
     }
+    if ($score == 21) {
+        //player auto wins
+        echo "blackjack";
+    }
     $current_player = file_get_contents("../data/current_player.json");
     $player_score = [$current_player, $score];
     $scorefile = fopen("../data/scores.json", "w");

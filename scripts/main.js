@@ -5,7 +5,7 @@ function validate_name() {
     let name_input = $('#player-name');
     let cur_val = name_input.val();
     let name_regex = "^[a-zA-Z0-9]+$";
-    if (cur_val.match(name_regex) && cur_val !== ''){
+    if (cur_val.match(name_regex) && cur_val !== '' && cur_val != "none"){
         name_input.removeClass('is-invalid');
         name_input.addClass('is-valid');
         return cur_val;
@@ -66,6 +66,9 @@ function update_current_player() {
                         url: 'scripts/start_game.php',
                         method: 'GET',
                         success: function(response){
+                            if (response.endsWith("blackjack")) {
+                                win_game();
+                            }
                             card1 = response.split(" ")[0];
                             card2 = response.split(" ")[1];
                             card1_url = "media/img/" + card1 + ".jpg"
@@ -110,7 +113,7 @@ function more_cards() {
                             }
                             else if (response.startsWith("blackjack")){
                                 alert("Blackjack! You win the game!")
-                                game_end();
+                                win_game();
                             }
                             else {
                                 new_card = response;
@@ -160,13 +163,29 @@ function print_user(){
     alert(username);
 }
 
-function game_end() {
+function win_game() {
     $.ajax({
         url: "scripts/choose_winner.php",
         method: "GET",
+        data: {
+            winner: sessionStorage.getItem("player-name")
+        },
         success: function() {
+            
         }
     })
+}
+
+function check_game_status() {
+    $.ajax({
+        url: "scripts/get_status.php",
+        method: "GET",
+        success: function(response) {
+            if (response != "none") {
+                window.location.href = "result.php";
+            }
+        }
+    });
 }
 
 $(function() {
@@ -179,5 +198,8 @@ $(function() {
     switch_turn();
     reset();
     // $("#inactive-player-content").hide();
-    window.setInterval(update_current_player, 1000);
+    if (window.location.href.endsWith("game.php")) {
+        window.setInterval(update_current_player, 1000);
+        window.setInterval(check_game_status, 2000);
+    }
 });
