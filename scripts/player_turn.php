@@ -34,13 +34,14 @@ if (isset($round_scores[$current_player_id])) {
     $round_scores[$current_player_id] = $scores[$current_player_id];
 } else {
     array_push($round_scores, Array(
-        $current_player_id => $scores[$current_player_id];
+        $current_player_id => $scores[$current_player_id]
     ));
 }
 
 // write the new round scores.
 $round_score_newjson = fopen("../data/round_scores.json", "w");
-fwrite($round_score_newjson, $round_scores);
+$round_scores_json = json_encode($round_scores);
+fwrite($round_score_newjson, $round_scores_json);
 
 $players = json_decode($json_file2, true);
 $player_count = count($players) - 1;

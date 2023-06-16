@@ -7,7 +7,7 @@ function validate_name() {
     if (cur_val.match(name_regex) && cur_val !== ''){
         name_input.removeClass('is-invalid');
         name_input.addClass('is-valid');
-        return true;
+        return cur_val;
     } else{
         name_input.removeClass('is-valid');
         name_input.addClass('is-invalid');
@@ -17,7 +17,8 @@ function validate_name() {
 
 function player_join() {
     $('#join-button').click(function(event) {
-        sessionStorage.setItem('player-name', cur_val);
+        username = validate_name()
+        sessionStorage.setItem('player-name', username);
     });
 
     // Switch turn button
