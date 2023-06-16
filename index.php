@@ -20,8 +20,8 @@ include __DIR__ . '/tpl/body_start.php';
             <br/>
             <h1>Blackjack</h1>
             <strong>Enter a username, then click below to join</strong>
-        </div>
-    </div>
+
+
     <form action="scripts/player_counter.php" method="POST">
         <div class="form-group">
             <input type="text" class="form-control" id="player-name" name="player-name" placeholder="Enter a username...">
@@ -34,6 +34,12 @@ include __DIR__ . '/tpl/body_start.php';
             <button type="submit" name="join" class="btn btn-primary" id="join-button">Join Lobby</button>
         </div>
     </form>
+
+    <strong>Press the button to reset the game</strong><br/>
+    <button name="more-cards" class="btn btn-primary" id="reset">Fix pip</button>
+
+        </div>
+    </div>
 
 <?php
 include __DIR__ . '/tpl/body_end.php';
