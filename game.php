@@ -18,6 +18,7 @@ include __DIR__ . '/tpl/body_start.php';
         <div class="col-md-12">
             <br/>
             <h1>Welcome to Blackjack!</h1>
+            <br/>
 
             <div id="username" class="box-red-background">
                 <table class="table">
