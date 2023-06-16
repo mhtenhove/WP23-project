@@ -54,3 +54,8 @@ table {
     margin-left: auto;
     margin-right: auto;
 }
+
+#winning-player {
+    font-size: 10em;
+    text-align: center;
+}
