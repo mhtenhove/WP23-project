@@ -49,9 +49,9 @@ include __DIR__ . '/tpl/body_start.php';
                 <br/>
                 <strong>Press the button to get a card</strong><br/>
                 <button name="more-cards" class="btn btn-primary" id="more-cards">Hit Me!</button>
-                <br/>
+                <!--<br/>
                 <strong>Press the button to start the game</strong><br/>
-                <button name="start-turn-btn" class="btn btn-primary" id="start-turn-btn">Start turn</button>
+                <button name="start-turn-btn" class="btn btn-primary" id="start-turn-btn">Start turn</button>-->
                 <br/>
             </div>
 

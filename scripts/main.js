@@ -1,4 +1,5 @@
 const default_card_img = "media/placeholder.jpg";
+var current_player = "";
 
 function validate_name() {
     let name_input = $('#player-name');
@@ -86,6 +87,27 @@ function update_current_player() {
         method: "GET",
         success: function(response){
             $("#current-player-info").html(response);
+            if (response != current_player) {
+                if (response == sessionStorage.getItem("player-name")) {
+                    // now its your player turn
+                    // so automatically run start_game
+                    $.ajax({
+                        url: 'scripts/start_game.php',
+                        method: 'GET',
+                        success: function(response){
+                            card1 = response.split(" ")[0];
+                            card2 = response.split(" ")[1];
+                            card1_url = "media/img/" + card1 + ".jpg"
+                            card2_url = "media/img/" + card2 + ".jpg"
+                            //$("#card-id").html(card1_url + " " +  card2)
+                            $("#card1").attr("src", card1_url);
+                            $("#card2").attr("src", card2_url);
+                            
+                        }
+                    });
+                }
+                current_player = response;
+            }
         }
     });
 }
