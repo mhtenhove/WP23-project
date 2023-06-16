@@ -134,6 +134,18 @@ function more_cards() {
     })
 }
 
+function reset() {
+    $("#reset").click(function() {
+        $.ajax({
+            url: "scripts/init.php",
+            method: "GET",
+            success: function() {
+                alert("The game has been initialized. You can now join the lobby.")
+
+            }
+        })
+    });
+}
 
 
 function print_user(){
@@ -154,6 +166,7 @@ $(function() {
     player_join();
     player_name_display();
     more_cards();
+    reset();
     // $("#inactive-player-content").hide();
     window.setInterval(update_current_player, 1000);
 });
