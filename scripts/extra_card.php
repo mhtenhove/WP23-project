@@ -25,14 +25,13 @@
 
     
     $current_player = file_get_contents("../data/current_player.json");
-    $player_score = Array(
-        $current_player => $scores[$current_player],
-    );
+    $player_score = [$current_player, $scores[1]];
+
 
 
 
     // save scores
-    $score = $player_score[$current_player];
+    $score = $player_score[1];
     $value_json = file_get_contents("../data/card_values.json");
     $values = json_decode($value_json, true);
     // get values
@@ -41,7 +40,7 @@
             $score += $values[$x]["value"];
         }
     }
-    $player_score[$current_player] = $score;
+    $player_score[1] = $score;
     $scorefile = fopen("../data/scores.json", "w");
     fwrite($scorefile, json_encode($player_score));
 

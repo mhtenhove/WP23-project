@@ -41,9 +41,7 @@
         }
     }
     $current_player = file_get_contents("../data/current_player.json");
-    $player_score = Array(
-        $current_player => $score,
-    );
+    $player_score = [$current_player, $score];
     $scorefile = fopen("../data/scores.json", "w");
     fwrite($scorefile, json_encode($player_score));
     

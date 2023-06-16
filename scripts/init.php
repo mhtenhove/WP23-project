@@ -7,7 +7,7 @@
     
     // Delete round_scores.json
     $roundscorefile = fopen("../data/round_scores.json", "w");
-    fwrite($roundscorefile, "");
+    fwrite($roundscorefile, "[[0,0]]");
     
     // Reset current_player.json
     $cur_play_file = fopen("../data/current_player.json", "w");
@@ -17,4 +17,5 @@
     $datafile = fopen("../data/data.json", "w");
     fwrite($datafile, '[{"id":0,"name":"Admin","status":"inactive"}]');
     
+    echo "Initialized game!";
 ?>
